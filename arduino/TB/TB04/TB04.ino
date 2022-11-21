@@ -17,13 +17,13 @@ ModbusMaster node;
 #define rgb_green 42
 #define rgb_blue 45
 
-const char* ssid = "DX_Project";
-const char* password = "natmms22";
+const char* ssid = "DX_Project"; // ******Change ssid wifi *********
+const char* password = "natmms22"; // ****** Change password *********
 //const char* ssid = "TP-Link_EF46";
 //const char* password = "98148813";
-const char* mqtt_server = "192.168.1.2";
+const char* mqtt_server = "192.168.1.2";  // ****** mqtt server *********
 
-IPAddress local_IP(192, 168, 1, 34); // ******Chang ip *********
+IPAddress local_IP(192, 168, 1, 34); // ******Change ip *********
 IPAddress gateway(192, 168, 1, 1);    // Gateway IP address
 IPAddress subnet(255, 255, 255, 0);     // subnet
 
