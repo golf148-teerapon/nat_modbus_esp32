@@ -204,229 +204,230 @@ void loop()
   //digitalWrite(led_connection, HIGH);
   Serial.println("\n---------------starting loop----------------");
 
-  node.readHoldingRegisters(0, 1); 
+  node.readCoils(0, 1); 
   Serial.print("M34 : ");
   Serial.println(node.getResponseBuffer(0));
   M34 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(1, 1); 
-  Serial.print("D330 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D330 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(2, 1); 
-  Serial.print("D332 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D332 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(3, 1); 
-  Serial.print("D334 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D334 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(4, 1); 
-  Serial.print("D336 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D336 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(5, 1); 
-  Serial.print("D338 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D338 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(6, 1); 
-  Serial.print("D340 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D340 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(7, 1); 
-  Serial.print("D342 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D342 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(8, 1); 
-  Serial.print("D344 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D344 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(9, 1); 
-  Serial.print("D346 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D346 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(10, 1); 
-  Serial.print("D348 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D348 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(11, 1); 
-  Serial.print("D350 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D350 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(12, 1); 
-  Serial.print("D226 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D226 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(13, 1); 
-  Serial.print("D100 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D100 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(14, 1); 
-  Serial.print("D102 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D102 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(15, 1); 
-  Serial.print("D104 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D104 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(16, 1); 
-  Serial.print("D106 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D106 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(17, 1); 
-  Serial.print("D108 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D108 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(18, 1); 
-  Serial.print("D110 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D110 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(19, 1); 
-  Serial.print("D112 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D112 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(20, 1); 
-  Serial.print("D114 : ");
-  Serial.println(node.getResponseBuffer(0));
-  D114 = node.getResponseBuffer(0);
-  node.clearResponseBuffer();
-
-  node.readHoldingRegisters(21, 1); 
+  node.readCoils(1, 1); 
   Serial.print("M36 : ");
   Serial.println(node.getResponseBuffer(0));
   M36 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(22, 1); 
+
+  node.readHoldingRegisters(0, 1); 
+  Serial.print("D330 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D330 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(1, 1); 
+  Serial.print("D332 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D332 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(2, 1); 
+  Serial.print("D334 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D334 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(3, 1); 
+  Serial.print("D336 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D336 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(4, 1); 
+  Serial.print("D338 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D338 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(5, 1); 
+  Serial.print("D340 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D340 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(6, 1); 
+  Serial.print("D342 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D342 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(7, 1); 
+  Serial.print("D344 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D344 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(8, 1); 
+  Serial.print("D346 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D346 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(9, 1); 
+  Serial.print("D348 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D348 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(10, 1); 
+  Serial.print("D350 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D350 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(11, 1); 
+  Serial.print("D226 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D226 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(12, 1); 
+  Serial.print("D100 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D100 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(13, 1); 
+  Serial.print("D102 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D102 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(14, 1); 
+  Serial.print("D104 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D104 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(15, 1); 
+  Serial.print("D106 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D106 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(16, 1); 
+  Serial.print("D108 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D108 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(17, 1); 
+  Serial.print("D110 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D110 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(18, 1); 
+  Serial.print("D112 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D112 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(19, 1); 
+  Serial.print("D114 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D114 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(20, 1); 
   Serial.print("D362 : ");
   Serial.println(node.getResponseBuffer(0));
   D362 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(23, 1); 
+  node.readHoldingRegisters(21, 1); 
   Serial.print("D364 : ");
   Serial.println(node.getResponseBuffer(0));
   D364 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(24, 1); 
+  node.readHoldingRegisters(22, 1); 
   Serial.print("D368 : ");
   Serial.println(node.getResponseBuffer(0));
   D368 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(25, 1); 
+  node.readHoldingRegisters(23, 1); 
   Serial.print("D370 : ");
   Serial.println(node.getResponseBuffer(0));
   D370 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(26, 1); 
+  node.readHoldingRegisters(24, 1); 
   Serial.print("D356 : ");
   Serial.println(node.getResponseBuffer(0));
   D356 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(27, 1); 
+  node.readHoldingRegisters(25, 1); 
   Serial.print("D372 : ");
   Serial.println(node.getResponseBuffer(0));
   D372 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(28, 1); 
+  node.readHoldingRegisters(26, 1); 
   Serial.print("D354 : ");
   Serial.println(node.getResponseBuffer(0));
   D354 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(29, 1); 
+  node.readHoldingRegisters(27, 1); 
   Serial.print("D366 : ");
   Serial.println(node.getResponseBuffer(0));
   D366 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(30, 1); 
+  node.readHoldingRegisters(28, 1); 
   Serial.print("D116 : ");
   Serial.println(node.getResponseBuffer(0));
   D116 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(31, 1); 
+  node.readHoldingRegisters(29, 1); 
   Serial.print("D122 : ");
   Serial.println(node.getResponseBuffer(0));
   D122 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(32, 1); 
+  node.readHoldingRegisters(30, 1); 
   Serial.print("D126 : ");
   Serial.println(node.getResponseBuffer(0));
   D126 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(33, 1); 
+  node.readHoldingRegisters(31, 1); 
   Serial.print("D128 : ");
   Serial.println(node.getResponseBuffer(0));
   D128 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(34, 1); 
+  node.readHoldingRegisters(32, 1); 
   Serial.print("D118 : ");
   Serial.println(node.getResponseBuffer(0));
   D118 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(35, 1); 
+  node.readHoldingRegisters(33, 1); 
   Serial.print("D120 : ");
   Serial.println(node.getResponseBuffer(0));
   D120 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(36, 1); 
+  node.readHoldingRegisters(34, 1); 
   Serial.print("D124 : ");
   Serial.println(node.getResponseBuffer(0));
   D124 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
-  node.readHoldingRegisters(37, 1); 
+  node.readHoldingRegisters(35, 1); 
   Serial.print("D286 : ");
   Serial.println(node.getResponseBuffer(0));
   D286 = node.getResponseBuffer(0);
@@ -436,27 +437,27 @@ void loop()
   led_blue();
   rssi.toCharArray(i_rssi, 16);client.publish("TB04/rssi", i_rssi);
   M34.toCharArray(i0, 16);client.publish("TB04/M34", i0);
-  D330.toCharArray(i1, 16);client.publish("TB04/D330", i1);
-  D332.toCharArray(i2, 16);client.publish("TB04/D332", i2);
-  D334.toCharArray(i3, 16);client.publish("TB04/D334", i3);
-  D336.toCharArray(i4, 16);client.publish("TB04/D336", i4);
-  D338.toCharArray(i5, 16);client.publish("TB04/D338", i5);
-  D340.toCharArray(i6, 16);client.publish("TB04/D340", i6);
-  D342.toCharArray(i7, 16);client.publish("TB04/D342", i7);     
-  D344.toCharArray(i8, 16);client.publish("TB04/D344", i8);
-  D346.toCharArray(i9, 16);client.publish("TB04/D346", i9);
-  D348.toCharArray(i10, 16);client.publish("TB04/D348", i10);
-  D350.toCharArray(i11, 16);client.publish("TB04/D350", i11);
-  D226.toCharArray(i12, 16);client.publish("TB04/D226", i12);
-  D100.toCharArray(i13, 16);client.publish("TB04/D100", i13);
-  D102.toCharArray(i14, 16);client.publish("TB04/D102", i14);
-  D104.toCharArray(i15, 16);client.publish("TB04/D104", i15);
-  D106.toCharArray(i16, 16);client.publish("TB04/D106", i16);
-  D108.toCharArray(i17, 16);client.publish("TB04/D108", i17);
-  D110.toCharArray(i18, 16);client.publish("TB04/D110", i18);  
-  D112.toCharArray(i19, 16);client.publish("TB04/D112", i19); 
-  D114.toCharArray(i20, 16);client.publish("TB04/D114", i20);
-  M36.toCharArray(i21, 16);client.publish("TB04/M36", i21);
+  M36.toCharArray(i1, 16);client.publish("TB04/M36", i1);
+  D330.toCharArray(i2, 16);client.publish("TB04/D330", i2);
+  D332.toCharArray(i3, 16);client.publish("TB04/D332", i3);
+  D334.toCharArray(i4, 16);client.publish("TB04/D334", i4);
+  D336.toCharArray(i5, 16);client.publish("TB04/D336", i5);
+  D338.toCharArray(i6, 16);client.publish("TB04/D338", i6);
+  D340.toCharArray(i7, 16);client.publish("TB04/D340", i7);
+  D342.toCharArray(i8, 16);client.publish("TB04/D342", i8);     
+  D344.toCharArray(i9, 16);client.publish("TB04/D344", i9);
+  D346.toCharArray(i10, 16);client.publish("TB04/D346", i10);
+  D348.toCharArray(i11, 16);client.publish("TB04/D348", i11);
+  D350.toCharArray(i12, 16);client.publish("TB04/D350", i12);
+  D226.toCharArray(i13, 16);client.publish("TB04/D226", i13);
+  D100.toCharArray(i14, 16);client.publish("TB04/D100", i14);
+  D102.toCharArray(i15, 16);client.publish("TB04/D102", i15);
+  D104.toCharArray(i16, 16);client.publish("TB04/D104", i16);
+  D106.toCharArray(i17, 16);client.publish("TB04/D106", i17);
+  D108.toCharArray(i18, 16);client.publish("TB04/D108", i18);
+  D110.toCharArray(i19, 16);client.publish("TB04/D110", i19);  
+  D112.toCharArray(i20, 16);client.publish("TB04/D112", i20); 
+  D114.toCharArray(i21, 16);client.publish("TB04/D114", i21);
   D362.toCharArray(i22, 16);client.publish("TB04/D362", i22);
   D364.toCharArray(i23, 16);client.publish("TB04/D364", i23);
   D368.toCharArray(i24, 16);client.publish("TB04/D368", i24);
