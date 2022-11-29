@@ -1,0 +1,44 @@
+Device Data Transfer
+Block Number,39
+
+Device Type,Points,Source Device,Destination Device,Comment,Offset
+
+Signed BIN16,1,"D330","@2 400001",,None   
+Signed BIN16,1,"D332","@2 400002",,None   
+Signed BIN16,1,"D334","@2 400003",,None   
+Signed BIN16,1,"D336","@2 400004",,None   
+Signed BIN16,1,"D338","@2 400005",,None   
+Signed BIN16,1,"D340","@2 400006",,None   
+Signed BIN16,1,"D342","@2 400007",,None   
+Signed BIN16,1,"D344","@2 400008",,None   
+Signed BIN16,1,"D346","@2 400009",,None   
+Signed BIN16,1,"D348","@2 400010",,None   
+Signed BIN16,1,"D350","@2 400011",,None   
+Signed BIN16,1,"D226","@2 400012",,None   
+Signed BIN16,1,"D100","@2 400013",,None   
+Signed BIN16,1,"D102","@2 400014",,None   
+Signed BIN16,1,"D104","@2 400015",,None   
+Signed BIN16,1,"D106","@2 400016",,None   
+Signed BIN16,1,"D108","@2 400017",,None   
+Signed BIN16,1,"D110","@2 400018",,None   
+Signed BIN16,1,"D112","@2 400019",,None   
+Signed BIN16,1,"D114","@2 400020",,None   
+Signed BIN16,1,"D362","@2 400021",,None   
+Signed BIN16,1,"D364","@2 400022",,None   
+Signed BIN16,1,"D368","@2 400023",,None   
+Signed BIN16,1,"D370","@2 400024",,None   
+Signed BIN16,1,"D356","@2 400025",,None   
+Signed BIN16,1,"D372","@2 400026",,None   
+Signed BIN16,1,"D354","@2 400027",,None   
+Signed BIN16,1,"D366","@2 400028",,None   
+Signed BIN16,1,"D116","@2 400029",,None   
+Signed BIN16,1,"D122","@2 400030",,None   
+Signed BIN16,1,"D126","@2 400031",,None   
+Signed BIN16,1,"D128","@2 400032",,None   
+Signed BIN16,1,"D118","@2 400033",,None   
+Signed BIN16,1,"D120","@2 400034",,None   
+Signed BIN16,1,"D124","@2 400035",,None   
+Signed BIN16,1,"D286","@2 400036",,None   
+Bit,1,"M34","@2 000001",,None   
+Bit,1,"M36","@2 000002",,None   
+Signed BIN16,1,"D32","@2 400037",,None   
