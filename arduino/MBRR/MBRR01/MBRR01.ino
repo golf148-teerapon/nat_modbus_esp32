@@ -339,6 +339,7 @@ D11155,
 D11156,
 D11157,
 D11158,
+D11159,
 rssi
 ;
 
@@ -500,6 +501,7 @@ i154[16],
 i155[16],
 i156[16],
 i157[16],
+i158[16],
 i_rssi[16];
 
 void loop() 
@@ -674,6 +676,7 @@ node.readHoldingRegisters(154, 1);   Serial.print("COLUMN2 B RING NO.36 : ");  S
 node.readHoldingRegisters(155, 1);   Serial.print("COLUMN2 B RING NO.37 : ");  Serial.println(node.getResponseBuffer(0));D11156= node.getResponseBuffer(0);  node.clearResponseBuffer();
 node.readHoldingRegisters(156, 1);   Serial.print("COLUMN2 B RING NO.38 : ");  Serial.println(node.getResponseBuffer(0));D11157= node.getResponseBuffer(0);  node.clearResponseBuffer();
 node.readHoldingRegisters(157, 1);   Serial.print("COLUMN2 B RING NO.39 : ");  Serial.println(node.getResponseBuffer(0));D11158= node.getResponseBuffer(0);  node.clearResponseBuffer();
+node.readHoldingRegisters(158, 1);   Serial.print("UTL : ");  Serial.println(node.getResponseBuffer(0));D11159= node.getResponseBuffer(0);  node.clearResponseBuffer();
 
 
 
@@ -838,6 +841,7 @@ D11155.toCharArray(i154,16);client.publish("MBRR01/D11155",i154);
 D11156.toCharArray(i155,16);client.publish("MBRR01/D11156",i155);
 D11157.toCharArray(i156,16);client.publish("MBRR01/D11157",i156);
 D11158.toCharArray(i157,16);client.publish("MBRR01/D11158",i157);
+D11159.toCharArray(i158,16);client.publish("MBRR01/D11159",i158);
 rssi.toCharArray(i_rssi,16);client.publish("MBRR01/rssi",i_rssi);
 
   
