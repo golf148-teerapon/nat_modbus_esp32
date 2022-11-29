@@ -1,0 +1,14 @@
+Device Data Transfer
+Block Number,9
+
+Device Type,Points,Source Device,Destination Device,Comment,Offset
+
+Signed BIN16,1,"D3162","@2 400001",,None   
+Signed BIN16,1,"D3102","@2 400002",,None   
+Signed BIN16,1,"D3166","@2 400003",,None   
+Signed BIN16,1,"D3106","@2 400004",,None   
+Signed BIN16,1,"D3168","@2 400005",,None   
+Signed BIN16,1,"D3108","@2 400006",,None   
+Signed BIN16,1,"D3170","@2 400007",,None   
+Signed BIN16,1,"D3110","@2 400008",,None   
+Signed BIN16,1,"D52","@2 400009",,None   

@@ -1,4 +1,4 @@
-//TB12
+//TB08
 //change ssid,password,mqtt_server,local_IP,setHostname,String rssi,char i_rssi,client.publish
 
 #include <WiFi.h>
@@ -23,7 +23,7 @@ const char* password = "natmms22"; // ****** Change password *********
 //const char* password = "98148813";
 const char* mqtt_server = "192.168.1.2";  // ****** mqtt server *********
 
-IPAddress local_IP(192, 168, 1, 42); // ******Change ip *********
+IPAddress local_IP(192, 168, 1, 38); // ******Change ip *********
 IPAddress gateway(192, 168, 1, 1);    // Gateway IP address
 IPAddress subnet(255, 255, 255, 0);     // subnet
 
@@ -143,7 +143,7 @@ void setup()
   // ArduinoOTA.setPort(3232);
 
   // Hostname defaults to esp3232-[MAC]
-  ArduinoOTA.setHostname("TB12");
+  ArduinoOTA.setHostname("TB08");
 
   // No authentication by default
   ArduinoOTA.setPassword("1234");
@@ -441,46 +441,46 @@ void loop()
   
   delay(500);
   led_blue();
-  rssi.toCharArray(i_rssi, 16);client.publish("TB12/rssi", i_rssi);
-  M34.toCharArray(i0, 16);client.publish("TB12/M34", i0);
-  M36.toCharArray(i1, 16);client.publish("TB12/M36", i1);
-  D330.toCharArray(i2, 16);client.publish("TB12/D330", i2);
-  D332.toCharArray(i3, 16);client.publish("TB12/D332", i3);
-  D334.toCharArray(i4, 16);client.publish("TB12/D334", i4);
-  D336.toCharArray(i5, 16);client.publish("TB12/D336", i5);
-  D338.toCharArray(i6, 16);client.publish("TB12/D338", i6);
-  D340.toCharArray(i7, 16);client.publish("TB12/D340", i7);
-  D342.toCharArray(i8, 16);client.publish("TB12/D342", i8);     
-  D344.toCharArray(i9, 16);client.publish("TB12/D344", i9);
-  D346.toCharArray(i10, 16);client.publish("TB12/D346", i10);
-  D348.toCharArray(i11, 16);client.publish("TB12/D348", i11);
-  D350.toCharArray(i12, 16);client.publish("TB12/D350", i12);
-  D226.toCharArray(i13, 16);client.publish("TB12/D226", i13);
-  D100.toCharArray(i14, 16);client.publish("TB12/D100", i14);
-  D102.toCharArray(i15, 16);client.publish("TB12/D102", i15);
-  D104.toCharArray(i16, 16);client.publish("TB12/D104", i16);
-  D106.toCharArray(i17, 16);client.publish("TB12/D106", i17);
-  D108.toCharArray(i18, 16);client.publish("TB12/D108", i18);
-  D110.toCharArray(i19, 16);client.publish("TB12/D110", i19);  
-  D112.toCharArray(i20, 16);client.publish("TB12/D112", i20); 
-  D114.toCharArray(i21, 16);client.publish("TB12/D114", i21);
-  D362.toCharArray(i22, 16);client.publish("TB12/D362", i22);
-  D364.toCharArray(i23, 16);client.publish("TB12/D364", i23);
-  D368.toCharArray(i24, 16);client.publish("TB12/D368", i24);
-  D370.toCharArray(i25, 16);client.publish("TB12/D370", i25);
-  D356.toCharArray(i26, 16);client.publish("TB12/D356", i26);
-  D372.toCharArray(i27, 16);client.publish("TB12/D372", i27);
-  D354.toCharArray(i28, 16);client.publish("TB12/D354", i28);
-  D366.toCharArray(i29, 16);client.publish("TB12/D366", i29);
-  D116.toCharArray(i30, 16);client.publish("TB12/D116", i30);
-  D122.toCharArray(i31, 16);client.publish("TB12/D122", i31);
-  D126.toCharArray(i32, 16);client.publish("TB12/D126", i32);
-  D128.toCharArray(i33, 16);client.publish("TB12/D128", i33);
-  D118.toCharArray(i34, 16);client.publish("TB12/D118", i34);
-  D120.toCharArray(i35, 16);client.publish("TB12/D120", i35);
-  D124.toCharArray(i36, 16);client.publish("TB12/D124", i36);
-  D286.toCharArray(i37, 16);client.publish("TB12/D286", i37);
-  D32.toCharArray(i38, 16);client.publish("TB12/D32", i38);
+  rssi.toCharArray(i_rssi, 16);client.publish("TB08/rssi", i_rssi);
+  M34.toCharArray(i0, 16);client.publish("TB08/M34", i0);
+  M36.toCharArray(i1, 16);client.publish("TB08/M36", i1);
+  D330.toCharArray(i2, 16);client.publish("TB08/D330", i2);
+  D332.toCharArray(i3, 16);client.publish("TB08/D332", i3);
+  D334.toCharArray(i4, 16);client.publish("TB08/D334", i4);
+  D336.toCharArray(i5, 16);client.publish("TB08/D336", i5);
+  D338.toCharArray(i6, 16);client.publish("TB08/D338", i6);
+  D340.toCharArray(i7, 16);client.publish("TB08/D340", i7);
+  D342.toCharArray(i8, 16);client.publish("TB08/D342", i8);     
+  D344.toCharArray(i9, 16);client.publish("TB08/D344", i9);
+  D346.toCharArray(i10, 16);client.publish("TB08/D346", i10);
+  D348.toCharArray(i11, 16);client.publish("TB08/D348", i11);
+  D350.toCharArray(i12, 16);client.publish("TB08/D350", i12);
+  D226.toCharArray(i13, 16);client.publish("TB08/D226", i13);
+  D100.toCharArray(i14, 16);client.publish("TB08/D100", i14);
+  D102.toCharArray(i15, 16);client.publish("TB08/D102", i15);
+  D104.toCharArray(i16, 16);client.publish("TB08/D104", i16);
+  D106.toCharArray(i17, 16);client.publish("TB08/D106", i17);
+  D108.toCharArray(i18, 16);client.publish("TB08/D108", i18);
+  D110.toCharArray(i19, 16);client.publish("TB08/D110", i19);  
+  D112.toCharArray(i20, 16);client.publish("TB08/D112", i20); 
+  D114.toCharArray(i21, 16);client.publish("TB08/D114", i21);
+  D362.toCharArray(i22, 16);client.publish("TB08/D362", i22);
+  D364.toCharArray(i23, 16);client.publish("TB08/D364", i23);
+  D368.toCharArray(i24, 16);client.publish("TB08/D368", i24);
+  D370.toCharArray(i25, 16);client.publish("TB08/D370", i25);
+  D356.toCharArray(i26, 16);client.publish("TB08/D356", i26);
+  D372.toCharArray(i27, 16);client.publish("TB08/D372", i27);
+  D354.toCharArray(i28, 16);client.publish("TB08/D354", i28);
+  D366.toCharArray(i29, 16);client.publish("TB08/D366", i29);
+  D116.toCharArray(i30, 16);client.publish("TB08/D116", i30);
+  D122.toCharArray(i31, 16);client.publish("TB08/D122", i31);
+  D126.toCharArray(i32, 16);client.publish("TB08/D126", i32);
+  D128.toCharArray(i33, 16);client.publish("TB08/D128", i33);
+  D118.toCharArray(i34, 16);client.publish("TB08/D118", i34);
+  D120.toCharArray(i35, 16);client.publish("TB08/D120", i35);
+  D124.toCharArray(i36, 16);client.publish("TB08/D124", i36);
+  D286.toCharArray(i37, 16);client.publish("TB08/D286", i37);
+  D32.toCharArray(i38, 16);client.publish("TB08/D32", i38);
   
   Serial.println("\n---------------finish loop------------------\n\n");
   delay(5000);

@@ -187,7 +187,7 @@ void setup()
   client.setCallback(callback);
 }
 
-String rssi,M34,D330,D332,D334,D336,D338,D340,D342,D344,D346,D348,D350,D226,D100,D102,D104,D106,D108,D110,D112,D114,M36,D362,D364,D368,D370,D356,D372,D354,D366,D116,D122,D126,D128,D118,D120,D124,D286;
+String rssi,M34,D330,D332,D334,D336,D338,D340,D342,D344,D346,D348,D350,D226,D100,D102,D104,D106,D108,D110,D112,D114,M36,D362,D364,D368,D370,D356,D372,D354,D366,D116,D122,D126,D128,D118,D120,D124,D286,D32;
 char i_rssi[16],i0[16],i1[16],i2[16],i3[16],i4[16],i5[16],i6[16],i7[16],i8[16],i9[16],i10[16],i11[16],i12[16],i13[16],i14[16],i15[16],i16[16],i17[16],i18[16],i19[16],i20[16],i21[16],i22[16],i23[16],i24[16],i25[16],i26[16],i27[16],i28[16],i29[16],i30[16],i31[16],i32[16],i33[16],i34[16],i35[16],i36[16],i37[16],i38[16],i39[16],i40[16],i41[16],i42[16],i43[16],i44[16],i45[16],i46[16],i47[16],i48[16],i49[16];
 
 void loop() 
@@ -433,6 +433,12 @@ void loop()
   D286 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
+  node.readHoldingRegisters(36, 1); 
+  Serial.print("D32 : ");
+  Serial.println(node.getResponseBuffer(0));
+  D32 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+  
   delay(500);
   led_blue();
   rssi.toCharArray(i_rssi, 16);client.publish("TB10/rssi", i_rssi);
@@ -474,6 +480,7 @@ void loop()
   D120.toCharArray(i35, 16);client.publish("TB10/D120", i35);
   D124.toCharArray(i36, 16);client.publish("TB10/D124", i36);
   D286.toCharArray(i37, 16);client.publish("TB10/D286", i37);
+  D32.toCharArray(i38, 16);client.publish("TB10/D32", i38);
   
   Serial.println("\n---------------finish loop------------------\n\n");
   delay(5000);
