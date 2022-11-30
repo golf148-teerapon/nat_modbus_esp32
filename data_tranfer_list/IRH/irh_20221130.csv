@@ -1,0 +1,19 @@
+Device Data Transfer
+Block Number,14
+
+Device Type,Points,Source Device,Destination Device,Comment,Offset
+
+Signed BIN16,1,"ZR2","@2 400001",,None   
+Signed BIN16,1,"ZR6","@2 400002",,None   
+Signed BIN16,1,"D5210","@2 400003",,None   
+Signed BIN16,1,"D5230","@2 400004",,None   
+Signed BIN16,1,"D5250","@2 400005",,None   
+Signed BIN16,1,"ZR532","@2 400006",,None   
+Signed BIN16,1,"ZR552","@2 400007",,None   
+Signed BIN16,1,"ZR572","@2 400008",,None   
+Signed BIN16,1,"ZR632","@2 400009",,None   
+Signed BIN16,1,"ZR652","@2 400010",,None   
+Signed BIN16,1,"ZR672","@2 400011",,None   
+Signed BIN16,1,"ZR732","@2 400012",,None   
+Signed BIN16,1,"ZR752","@2 400013",,None   
+Signed BIN16,1,"ZR772","@2 400014",,None   
