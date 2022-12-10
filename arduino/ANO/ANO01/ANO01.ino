@@ -1,4 +1,3 @@
-//IRH01
 #include <WiFi.h>
 #include <ESPmDNS.h>
 #include <WiFiUdp.h>
@@ -8,9 +7,12 @@
 
 ModbusMaster node;
 
-#define led_connection 41
-#define led_run 42
+//#define led_connection 42
+//#define led_run 41
 
+#define rgb_red 41
+#define rgb_green 42
+#define rgb_blue 45
 
 const char* ssid = "DX_Project";
 const char* password = "natmms22";
@@ -18,7 +20,7 @@ const char* password = "natmms22";
 //const char* password = "98148813";
 const char* mqtt_server = "192.168.1.2";
 
-IPAddress local_IP(192, 168, 1, 51); // Static IP address192.168.100.164
+IPAddress local_IP(192, 168, 1, 41); // Static IP address192.168.100.164
 IPAddress gateway(192, 168, 1, 1);    // Gateway IP address
 IPAddress subnet(255, 255, 255, 0);     // subnet
 
@@ -50,7 +52,7 @@ void setup_wifi()
   while (WiFi.status() != WL_CONNECTED) 
   {
     count_connection++;
-    digitalWrite(led_connection, HIGH);delay(100);digitalWrite(led_connection, LOW);delay(100);  
+    delay(500);
     Serial.print(".");
     if(count_connection>20)
     {
@@ -92,9 +94,9 @@ int timeout ;
 void reconnect() 
 {
   // Loop until we're reconnected
-  if(!client.connected()) 
+  if (!client.connected()) 
   {
-    digitalWrite(led_connection, HIGH);  
+    led_red();
     Serial.print("Attempting MQTT connection...");
     // Create a random client ID
     String clientId = "ESP8266Client-";
@@ -112,7 +114,6 @@ void reconnect()
       Serial.println(" try again in 5 seconds");
       // Wait 5 seconds before retrying
       //delay(5000);
-      digitalWrite(led_connection, HIGH);delay(300);digitalWrite(led_connection, LOW);delay(300);    
       timeout++;
       if(timeout >= 10)
       {
@@ -127,8 +128,11 @@ void setup()
   Serial.begin(9600);
   Serial1.begin(9600);
   node.begin(1,Serial1);
-  pinMode ( led_connection , OUTPUT);
-  pinMode ( led_run, OUTPUT);
+  pinMode(rgb_red, OUTPUT);
+  pinMode(rgb_green, OUTPUT);
+  pinMode(rgb_blue, OUTPUT);
+  //pinMode ( led_connection , OUTPUT);
+  //pinMode ( led_run, OUTPUT);
   Serial.println("Booting");
   setup_wifi(); 
 
@@ -136,7 +140,7 @@ void setup()
   // ArduinoOTA.setPort(3232);
 
   // Hostname defaults to esp3232-[MAC]
-  ArduinoOTA.setHostname("IRH01");
+  ArduinoOTA.setHostname("AN01");
 
   // No authentication by default
   ArduinoOTA.setPassword("1234");
@@ -180,129 +184,203 @@ void setup()
   client.setCallback(callback);
 }
 
-//String m108,m94,m76,m62,m60,m28,m26,m19,m6,m63,d330,d332,d334,d336,d338,d340,d342,d352,d344,d346,d348,d350,d32,d226;
-//char d0[16],d1[16],d2[16],d3[16],d4[16],d5[16],d6[16],d7[16],d8[16],d9[16],d10[16],d11[16],d12[16],d13[16],d14[16],d15[16],d16[16],d17[16],d18[16],d19[16],d20[16],d21[16],d22[16],d23[16];
-String rssi,zr2,zr6,d5210,d5230,d5250,zr532,zr552,zr572,zr632,zr652,zr672,zr732,zr752,zr772;
-char d_rssi[16],d0[16],d1[16],d2[16],d3[16],d4[16],d5[16],d6[16],d7[16],d8[16],d9[16],d10[16],d11[16],d12[16],d13[16];
+String rssi,d3162,d3102,d3166,d3106,d3168,d3108,d3170,d3110,d51,gd10,d3262,d3202,d3266,d3206,d3268,d3208,d3270,d3210,d52,gd12,d416,d436;
+char d_rssi[16],d0[16],d1[16],d2[16],d3[16],d4[16],d5[16],d6[16],d7[16],d8[16],d9[16],d10[16],d11[16],d12[16],d13[16],d14[16],d15[16],d16[16],d17[16],d18[16],d19[16],d20[16],d21[16];
 
 
 void loop() 
 {
   rssi = WiFi.RSSI();
+  //Serial.print(WiFi.RSSI()); 
   ArduinoOTA.handle();
   if (!client.connected()) 
   {
     reconnect();
   }
   client.loop();
-  digitalWrite(led_connection, HIGH);  
-  digitalWrite(led_run, LOW);  
+  led_green();
   //digitalWrite(led_connection, HIGH);
   Serial.println("\n---------------starting loop----------------");
   
   node.readHoldingRegisters(0, 1); 
-  Serial.print("zr2 : ");
+  Serial.print("d3162 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr2 = node.getResponseBuffer(0);
+  d3162 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
   node.readHoldingRegisters(1, 1); 
-  Serial.print("zr6 : ");
+  Serial.print("d3102 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr6 = node.getResponseBuffer(0);
+  d3102 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
   node.readHoldingRegisters(2, 1); 
-  Serial.print("d5210 : ");
+  Serial.print("d3166 : ");
   Serial.println(node.getResponseBuffer(0));
-  d5210 = node.getResponseBuffer(0);
+  d3166 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
-  
+
   node.readHoldingRegisters(3, 1); 
-  Serial.print("d5230 : ");
+  Serial.print("d3106 : ");
   Serial.println(node.getResponseBuffer(0));
-  d5230 = node.getResponseBuffer(0);
+  d3106 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
   node.readHoldingRegisters(4, 1); 
-  Serial.print("d5250 : ");
+  Serial.print("d3168 : ");
   Serial.println(node.getResponseBuffer(0));
-  d5250 = node.getResponseBuffer(0);
+  d3168 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
   node.readHoldingRegisters(5, 1); 
-  Serial.print("zr532 : ");
+  Serial.print("d3108 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr532 = node.getResponseBuffer(0);
+  d3108 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
   node.readHoldingRegisters(6, 1); 
-  Serial.print("zr552 : ");
+  Serial.print("d3170 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr552 = node.getResponseBuffer(0);
+  d3170 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
   node.readHoldingRegisters(7, 1); 
-  Serial.print("zr572 : ");
+  Serial.print("d3110 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr572 = node.getResponseBuffer(0);
+  d3110 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
   node.readHoldingRegisters(8, 1); 
-  Serial.print("zr632 : ");
+  Serial.print("d51 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr632 = node.getResponseBuffer(0);
+  d51 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
   node.readHoldingRegisters(9, 1); 
-  Serial.print("zr652 : ");
+  Serial.print("gd10 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr652 = node.getResponseBuffer(0);
+  gd10 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
   node.readHoldingRegisters(10, 1); 
-  Serial.print("zr672 : ");
+  Serial.print("d3262 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr672 = node.getResponseBuffer(0);
+  d3262 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
-
+  
   node.readHoldingRegisters(11, 1); 
-  Serial.print("zr732 : ");
+  Serial.print("d3202 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr732 = node.getResponseBuffer(0);
+  d3202 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
-
+  
   node.readHoldingRegisters(12, 1); 
-  Serial.print("zr752 : ");
+  Serial.print("d3266 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr752 = node.getResponseBuffer(0);
+  d3266 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
 
   node.readHoldingRegisters(13, 1); 
-  Serial.print("zr772 : ");
+  Serial.print("d3206 : ");
   Serial.println(node.getResponseBuffer(0));
-  zr772 = node.getResponseBuffer(0);
+  d3206 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+  
+  node.readHoldingRegisters(14, 1); 
+  Serial.print("d3268 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d3268 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+  
+  node.readHoldingRegisters(15, 1); 
+  Serial.print("d3208 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d3208 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+  
+  node.readHoldingRegisters(16, 1); 
+  Serial.print("d3270 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d3270 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(17, 1); 
+  Serial.print("d3210 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d3210 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(18, 1); 
+  Serial.print("d52 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d52 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(19, 1); 
+  Serial.print("gd12 : ");
+  Serial.println(node.getResponseBuffer(0));
+  gd12 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(20, 1); 
+  Serial.print("d416 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d416 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+
+  node.readHoldingRegisters(21, 1); 
+  Serial.print("d436 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d436 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
   delay(500);
-  digitalWrite(led_run, HIGH);  
-  
-  zr2.toCharArray(d0, 16);client.publish("IRH01/ZR2", d0);
-  zr6.toCharArray(d1, 16);client.publish("IRH01/ZR6", d1);
-  d5210.toCharArray(d2, 16);client.publish("IRH01/D5210", d2);
-  d5230.toCharArray(d3, 16);client.publish("IRH01/D5230", d3);
-  d5250.toCharArray(d4, 16);client.publish("IRH01/D5250", d4);
-  zr532.toCharArray(d5, 16);client.publish("IRH01/ZR532", d5);
-  zr552.toCharArray(d6, 16);client.publish("IRH01/ZR552", d6);
-  zr572.toCharArray(d7, 16);client.publish("IRH01/ZR572", d7);
-  zr632.toCharArray(d8, 16);client.publish("IRH01/ZR632", d8);
-  zr652.toCharArray(d9, 16);client.publish("IRH01/ZR652", d9);
-  zr672.toCharArray(d10, 16);client.publish("IRH01/ZR672", d10);
-  zr732.toCharArray(d11, 16);client.publish("IRH01/ZR732", d11);
-  zr752.toCharArray(d12, 16);client.publish("IRH01/ZR752", d12);
-  zr772.toCharArray(d13, 16);client.publish("IRH01/ZR772", d13);
-  rssi.toCharArray(d_rssi, 16);client.publish("IRH01/rssi", d_rssi);
-  
+  led_blue();
+  rssi.toCharArray(d_rssi, 16);client.publish("AN01/rssi", d_rssi);
+  d3162.toCharArray(d0, 16);client.publish("AN01/D3162", d0);
+  d3102.toCharArray(d1, 16);client.publish("AN01/D3102", d1);
+  d3166.toCharArray(d2, 16);client.publish("AN01/D3166", d2);
+  d3106.toCharArray(d3, 16);client.publish("AN01/D3106", d3);
+  d3168.toCharArray(d4, 16);client.publish("AN01/D3168", d4);
+  d3108.toCharArray(d5, 16);client.publish("AN01/D3108", d5);
+  d3170.toCharArray(d6, 16);client.publish("AN01/D3170", d6);
+  d3110.toCharArray(d7, 16);client.publish("AN01/D3110", d7);
+  d51.toCharArray(d8, 16);client.publish("AN01/D51", d8);
+  gd10.toCharArray(d9, 16);client.publish("AN01/GD10", d9);
+
+  d3262.toCharArray(d10, 16);client.publish("AN01/D3262", d10);
+  d3202.toCharArray(d11, 16);client.publish("AN01/D3202", d11);
+  d3266.toCharArray(d12, 16);client.publish("AN01/D3266", d12);
+  d3206.toCharArray(d13, 16);client.publish("AN01/D3206", d13);
+  d3268.toCharArray(d14, 16);client.publish("AN01/D3268", d14);
+  d3208.toCharArray(d15, 16);client.publish("AN01/D3208", d15);
+  d3270.toCharArray(d16, 16);client.publish("AN01/D3270", d16);
+  d3210.toCharArray(d17, 16);client.publish("AN01/D3210", d17);
+  d52.toCharArray(d18, 16);client.publish("AN01/D52", d18);
+  gd12.toCharArray(d19, 16);client.publish("AN01/GD12", d19);
+  d416.toCharArray(d20, 16);client.publish("AN01/D416", d20);
+  d436.toCharArray(d21, 16);client.publish("AN01/D436", d21);
+    
   Serial.println("\n---------------finish loop------------------\n\n");
   delay(5000);
+}
+
+void led_red()
+{
+  digitalWrite(rgb_red, LOW); digitalWrite(rgb_green, HIGH); digitalWrite(rgb_blue, HIGH);  
+}
+
+void led_green()
+{
+  digitalWrite(rgb_red, HIGH); digitalWrite(rgb_green, LOW); digitalWrite(rgb_blue, HIGH);  
+}
+
+void led_blue()
+{
+  digitalWrite(rgb_red, HIGH); digitalWrite(rgb_green, HIGH); digitalWrite(rgb_blue, LOW);  
+}
+
+void rgb_off()
+{
+  digitalWrite(rgb_red, HIGH); digitalWrite(rgb_green, HIGH); digitalWrite(rgb_blue, HIGH);
 }

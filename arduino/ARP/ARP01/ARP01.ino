@@ -184,7 +184,7 @@ void setup()
   client.setCallback(callback);
 }
 
-String rssi,d200,d202,d204,d210,d212,d32;
+String rssi,d200,d202,d204,d210,d212,d32,d416;
 char d_rssi[16],d0[16],d1[16],d2[16],d3[16],d4[16],d5[16],d6[16],d7[16],d8[16],d9[16],d10[16],d11[16],d12[16],d13[16],d14[16],d15[16],d16[16],d17[16],d18[16],d19[16],d20[16],d21[16],d22[16],d23[16],d24[16],d25[16],d26[16],d27[16],d28[16],d29[16],d30[16],d31[16];
 
 
@@ -238,6 +238,13 @@ void loop()
   d32 = node.getResponseBuffer(0);
   node.clearResponseBuffer();
   
+  node.readHoldingRegisters(6, 1); 
+  Serial.print("D416 : ");
+  Serial.println(node.getResponseBuffer(0));
+  d416 = node.getResponseBuffer(0);
+  node.clearResponseBuffer();
+  
+  
   delay(500);
   led_blue();
   rssi.toCharArray(d_rssi, 16);client.publish("ARP01/rssi", d_rssi);
@@ -247,6 +254,7 @@ void loop()
   d210.toCharArray(d3, 16);client.publish("ARP01/D210", d3);
   d212.toCharArray(d4, 16);client.publish("ARP01/D212", d4);
   d32.toCharArray(d5, 16);client.publish("ARP01/D32", d5);
+  d416.toCharArray(d6, 16);client.publish("ARP01/D416", d6);
   
   Serial.println("\n---------------finish loop------------------\n\n");
   delay(5000);

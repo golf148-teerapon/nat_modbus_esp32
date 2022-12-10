@@ -211,6 +211,7 @@ D14027,
 D14028,
 D14029,
 D14030,
+D936,
 rssi
 ;
 
@@ -244,6 +245,7 @@ i26[16],
 i27[16],
 i28[16],
 i29[16],
+i30[16],
 i_rssi[16];
 
 void loop() 
@@ -290,7 +292,7 @@ node.readHoldingRegisters(26, 1);   Serial.print("B RING SHIELD HI NG : ");  Ser
 node.readHoldingRegisters(27, 1);   Serial.print("B RING SHIELD LO NG : ");  Serial.println(node.getResponseBuffer(0));D14028= node.getResponseBuffer(0);  node.clearResponseBuffer();
 node.readHoldingRegisters(28, 1);   Serial.print("B RING SHIELD NG : ");  Serial.println(node.getResponseBuffer(0));D14029= node.getResponseBuffer(0);  node.clearResponseBuffer();
 node.readHoldingRegisters(29, 1);   Serial.print("B RING SNAP NG : ");  Serial.println(node.getResponseBuffer(0));D14030= node.getResponseBuffer(0);  node.clearResponseBuffer();
-
+node.readHoldingRegisters(30, 1);   Serial.print("UTL : ");  Serial.println(node.getResponseBuffer(0));D936= node.getResponseBuffer(0);  node.clearResponseBuffer();
 
 
 
@@ -327,6 +329,7 @@ D14027.toCharArray(i26,16);client.publish("GSSM01/D14027",i26);
 D14028.toCharArray(i27,16);client.publish("GSSM01/D14028",i27);
 D14029.toCharArray(i28,16);client.publish("GSSM01/D14029",i28);
 D14030.toCharArray(i29,16);client.publish("GSSM01/D14030",i29);
+D936.toCharArray(i30,16);client.publish("GSSM01/D936",i30);
 rssi.toCharArray(i_rssi,16);client.publish("GSSM01/rssi",i_rssi);
 
 
