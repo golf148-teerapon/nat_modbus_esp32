@@ -224,9 +224,9 @@ void loop()
   led_blue();
   
   rssi.toCharArray(i_rssi, 16);client.publish("OSP01/rssi", i_rssi);
-  d512.toCharArray(i0, 16);client.publish("OSP01/d512", i0);
-  d25.toCharArray(i1, 16);client.publish("OSP01/d25", i1);
-  d515.toCharArray(i2, 16);client.publish("OSP01/d515", i2);
+  d512.toCharArray(i0, 16);client.publish("OSP01/D512", i0);
+  d25.toCharArray(i1, 16);client.publish("OSP01/D25", i1);
+  d515.toCharArray(i2, 16);client.publish("OSP01/D515", i2);
     
   Serial.println("\n---------------finish loop------------------\n\n");
   delay(5000);
